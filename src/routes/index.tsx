@@ -1,11 +1,18 @@
 import React from 'react'
-import { Route, RouteProps, Switch } from 'react-router-dom'
+import { Redirect, Route, RouteProps, Switch } from 'react-router-dom'
 
-import Home from 'pages/Home'
+import Activities from 'pages/Activities'
+import NotFound from 'pages/NotFound'
 
 const Routes: React.FC<RouteProps> = () => (
   <Switch>
-    <Route path="/" exact component={Home} />
+    <Route path="/" exact render={() => <Redirect to="/activities" />} />
+    <Route path="/activities" exact component={Activities} />
+    <Route path="/accounts" exact component={NotFound} />
+    <Route path="/users" exact component={NotFound} />
+    <Route path="/performance" exact component={NotFound} />
+    <Route path="/dashboard" exact component={NotFound} />
+    <Route component={NotFound} />
   </Switch>
 )
 

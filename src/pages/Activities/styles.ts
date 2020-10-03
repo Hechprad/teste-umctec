@@ -1,5 +1,13 @@
 import styled from 'styled-components'
 
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100vw;
+  height: 100vh;
+`
+
 export const Section = styled.section`
   display: flex;
   flex-direction: column;
@@ -12,6 +20,6 @@ export const Section = styled.section`
 
 export const PageTitle = styled.h3`
   ${({ theme }) => theme.fontTypes.heading}
-  color: ${({ theme }) => theme.colors.gray3};
+  color: ${({ theme }) => theme.colors.gray4};
   margin: ${({ theme }) => `${theme.spacing(2)}px 0 ${theme.spacing(5)}px`};
 `

@@ -1,6 +1,14 @@
 import { createGlobalStyle } from 'styled-components'
 
+import TitilliumWeb from '../assets/fonts/TitilliumWeb-Regular.ttf'
+
 export default createGlobalStyle`
+
+@font-face {
+    font-family: 'TitilliumWeb';
+    src: local('TitilliumWeb'),
+    url(${TitilliumWeb}) format('truetype');
+  }
 
   * {
     margin: 0;
@@ -16,7 +24,7 @@ export default createGlobalStyle`
   }
 
   body, input, button {
-    font-family: 'Roboto', serif;
+    font-family: 'TitilliumWeb', serif;
     font-size: 16px;
   }
 

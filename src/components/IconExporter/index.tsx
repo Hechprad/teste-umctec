@@ -28,12 +28,15 @@ export const dict = {
 interface IProps {
   name: keyof typeof dict
   color: keyof typeof themeColors
+  width?: string | number
+  height?: string | number
 }
 
 const IconExporter: React.FC<IProps> = ({
   name,
-  color = 'gray3',
+  color = 'gray4',
   width = 21,
+  height = 21,
   ...rest
 }: IProps & React.SVGAttributes<SVGElement>) => {
   const Icon: React.FC<SVGProps<SVGSVGElement>> = dict[name]
@@ -41,8 +44,9 @@ const IconExporter: React.FC<IProps> = ({
     <Icon
       role="img"
       aria-label={name}
-      fill={themeColors[color]}
+      color={themeColors[color]}
       width={width}
+      height={height || '100%'}
       {...rest}
     />
   )
