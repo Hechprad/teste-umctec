@@ -6,6 +6,7 @@ export const MenuItem = styled.div`
   align-content: center;
   width: 100%;
   height: 72px;
+  cursor: pointer;
 
   & + & {
     margin-top: ${({ theme }) => theme.spacing(1)}px;

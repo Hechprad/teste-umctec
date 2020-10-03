@@ -1,59 +1,38 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import { v4 } from 'uuid'
-import { themeColors } from 'styles/theme'
 
-import IconExporter, { dict } from 'components/IconExporter'
+import IconExporter from 'components/IconExporter'
 import MenuItem from './MenuItem'
 
+import menuItems from './data'
 import * as s from './styles'
 
 const Menu: React.FC = () => {
-  const menuItems: {
-    id: number
-    iconName: keyof typeof dict
-    text: string
-    color: keyof typeof themeColors
-    selectedItem: boolean
-  }[] = [
-    {
-      id: 1,
-      text: 'Minhas atividades',
-      iconName: 'accounts',
-      color: 'blue2',
-      selectedItem: false,
-    },
-    {
-      id: 2,
-      text: 'Todas as contas',
-      iconName: 'user',
-      color: 'gray3',
-      selectedItem: false,
-    },
-    {
-      id: 3,
-      text: 'Usuários',
-      iconName: 'user',
-      color: 'gray3',
-      selectedItem: false,
-    },
-    {
-      id: 4,
-      text: 'Desempenho',
-      iconName: 'dashboard',
-      color: 'gray3',
-      selectedItem: false,
-    },
-    {
-      id: 5,
-      text: 'Dashboard',
-      iconName: 'accounts',
-      color: 'gray3',
-      selectedItem: true,
-    },
-  ]
+  const history = useHistory()
+  const locationPath = history.location.pathname
 
   const handleClick = (clickedItem: number): void => {
-    console.log(clickedItem)
+    switch (clickedItem) {
+      case 1:
+        history.push('/activities')
+        break
+      case 2:
+        history.push('/accounts')
+        break
+      case 3:
+        history.push('/users')
+        break
+      case 4:
+        history.push('/performance')
+        break
+      case 5:
+        history.push('/dashboard')
+        break
+      default:
+        history.push('/')
+        break
+    }
   }
 
   return (
@@ -61,7 +40,7 @@ const Menu: React.FC = () => {
       <s.MenuLogo>
         <IconExporter name="brand" color="white1" width={100} height="100%" />
       </s.MenuLogo>
-      {menuItems.map(item => (
+      {menuItems(locationPath).map(item => (
         <MenuItem
           key={v4()}
           id={item.id}
