@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import api from 'services/api'
-import { IState } from 'store'
+import IState from 'store/types'
 
 import {
   getActivitiesDataRequest,

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 
 import { IActivitiesState, IActivity } from 'store/modules/Activities/types'
 import { useGetActivities } from 'hooks/useGetActivities'
-import { IState } from 'store'
+import IState from 'store/types'
 
 import * as s from './styles'
 
