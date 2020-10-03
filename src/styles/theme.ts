@@ -7,15 +7,20 @@ export const themeColors = {
   green1: '#20bf6b',
   gray1: '#DDDDDD',
   gray2: '#BABABA',
-  gray3: '#272727',
+  gray3: '#8B98BA',
+  gray4: '#272727',
   redOrange1: '#fd5958',
   white1: '#ffffff',
   white2: '#f4ede8',
   yellow1: '#ffc734',
 }
 
+export const shadows = {
+  gray1: '0px 2px 4px rgba(39, 39, 39, 0.14)',
+}
+
 const genericFontType = {
-  fontFamily: 'Roboto',
+  fontFamily: 'TitilliumWeb',
 }
 
 export const fontTypes = {
@@ -45,7 +50,7 @@ export const fontTypes = {
   },
   caption: {
     ...genericFontType,
-    fontSize: 12,
+    fontSize: 14,
     letterSpacing: 0,
     fontWeight: 400,
     lineHeight: '16px',
@@ -55,6 +60,7 @@ export const fontTypes = {
 declare module 'styled-components' {
   export interface DefaultTheme {
     colors: { [key in keyof typeof themeColors]: string }
+    shadows: { [key in keyof typeof shadows]: string }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     fontTypes: { [key in keyof typeof fontTypes]: any }
     spacing: (x: number) => number
@@ -64,6 +70,7 @@ declare module 'styled-components' {
 const theme: DefaultTheme = {
   colors: themeColors,
   fontTypes,
+  shadows,
   spacing: number => number * 8,
 }
 
