@@ -1,0 +1,293 @@
+{
+  "activities": [
+    {
+      "id": 1,
+      "name": "Unidade de internação I",
+      "cardsCount": {
+        "delayed": 4,
+        "warning": 3,
+        "good": 4
+      }
+    },
+    {
+      "id": 2,
+      "name": "Unidade de internação II",
+      "cardsCount": {
+        "delayed": 1,
+        "warning": 0,
+        "good": 0
+      }
+    },
+    {
+      "id": 3,
+      "name": "Unidade de internação III",
+      "cardsCount": {
+        "delayed": 0,
+        "warning": 0,
+        "good": 0
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": 0,
+      "activityId": 1,
+      "patientName": "Sudanka Bakalowits",
+      "days": 27,
+      "status": "DELAYED",
+      "healthInsurance": "Convênio 1",
+      "billSources": [
+        { "label": "Conta", "value": 792915 },
+        { "label": "Atend.", "value": "AT893701" },
+        { "label": "Remessa", "value": 893701 },
+        { "label": "Lote", "value": 893701 }
+      ],
+      "value": 5786.97,
+      "pendencies": 5,
+      "billTypes": ["Q", "R"],
+      "showAttachment": true,
+      "showDocument": true,
+      "hasPendingDocument": false
+    },
+    {
+      "id": 1,
+      "activityId": 1,
+      "patientName": "Brandon Neal",
+      "days": 25,
+      "status": "DELAYED",
+      "healthInsurance": "Convênio 1",
+      "billSources": [
+        { "label": "Conta", "value": 792914 },
+        { "label": "Atend.", "value": "AT893899" },
+        { "label": "Remessa", "value": 893700 },
+        { "label": "Lote", "value": 893701 }
+      ],
+      "value": 3908.09,
+      "pendencies": 5,
+      "billTypes": ["Q", "R"],
+      "showAttachment": true,
+      "showDocument": true,
+      "hasPendingDocument": false
+    },
+    {
+      "id": 2,
+      "activityId": 1,
+      "patientName": "Cao Yu",
+      "days": 23,
+      "status": "DELAYED",
+      "healthInsurance": "Convênio 2",
+      "billSources": [
+        { "label": "Conta", "value": 792913 },
+        { "label": "Atend.", "value": "AT893898" },
+        { "label": "Remessa", "value": 893699 },
+        { "label": "Lote", "value": 893700 }
+      ],
+      "value": 678.90,
+      "pendencies": 3,
+      "billTypes": ["H"],
+      "showAttachment": true,
+      "showDocument": false,
+      "hasPendingDocument": false
+    },
+    {
+      "id": 3,
+      "activityId": 1,
+      "patientName": "Nicholas Hudson",
+      "days": 20,
+      "status": "DELAYED",
+      "healthInsurance": "Convênio 1",
+      "billSources": [
+        { "label": "Conta", "value": 792912 },
+        { "label": "Atend.", "value": "AT893897" },
+        { "label": "Remessa", "value": 893698 },
+        { "label": "Lote", "value": 893700 }
+      ],
+      "value": 23457.23,
+      "pendencies": 1,
+      "billTypes": ["Q"],
+      "showAttachment": true,
+      "showDocument": true,
+      "hasPendingDocument": false
+    },
+    {
+      "id": 4,
+      "activityId": 1,
+      "patientName": "Xenie Dolezelová",
+      "days": 17,
+      "status": "WARNING",
+      "healthInsurance": "Convênio 3",
+      "billSources": [
+        { "label": "Conta", "value": 792911 },
+        { "label": "Atend.", "value": "AT893896" },
+        { "label": "Remessa", "value": 893697 },
+        { "label": "Lote", "value": 893665 }
+      ],
+      "value": 1239.00,
+      "pendencies": 0,
+      "billTypes": ["Q", "R"],
+      "showAttachment": true,
+      "showDocument": true,
+      "hasPendingDocument": true
+    },
+    {
+      "id": 5,
+      "activityId": 1,
+      "patientName": "Mkhuseli Maling",
+      "days": 15,
+      "status": "WARNING",
+      "healthInsurance": "Convênio 1",
+      "billSources": [
+        { "label": "Conta", "value": 792910 },
+        { "label": "Atend.", "value": "AT893895" },
+        { "label": "Remessa", "value": 893696 },
+        { "label": "Lote", "value": 893664 }
+      ],
+      "value": 243.00,
+      "pendencies": 5,
+      "billTypes": ["R"],
+      "showAttachment": true,
+      "showDocument": true,
+      "hasPendingDocument": true
+    },
+    {
+      "id": 6,
+      "activityId": 1,
+      "patientName": "Tsutsui Ichiha",
+      "days": 13,
+      "status": "WARNING",
+      "healthInsurance": "Convênio 1",
+      "billSources": [
+        { "label": "Conta", "value": 792910 },
+        { "label": "Atend.", "value": "AT893895" },
+        { "label": "Remessa", "value": 893696 },
+        { "label": "Lote", "value": 893664 }
+      ],
+      "value": 974.65,
+      "pendencies": 3,
+      "billTypes": ["Q", "R"],
+      "showAttachment": false,
+      "showDocument": false,
+      "hasPendingDocument": false
+    },
+    {
+      "id": 7,
+      "activityId": 1,
+      "patientName": "Frances Salazar",
+      "days": 4,
+      "status": "GOOD",
+      "healthInsurance": "Convênio 1",
+      "billSources": [
+        { "label": "Conta", "value": 792909 },
+        { "label": "Atend.", "value": "AT893893" },
+        { "label": "Remessa", "value": null },
+        { "label": "Lote", "value": null }
+      ],
+      "value": 453.98,
+      "pendencies": 2,
+      "billTypes": ["Q", "R"],
+      "showAttachment": true,
+      "showDocument": true,
+      "hasPendingDocument": true
+    },
+    {
+      "id": 8,
+      "activityId": 2,
+      "patientName": "Salazar Frances",
+      "days": 4,
+      "status": "GOOD",
+      "healthInsurance": "Convênio 3",
+      "billSources": [
+        { "label": "Conta", "value": 792908 },
+        { "label": "Atend.", "value": "AT893892" },
+        { "label": "Remessa", "value": 893691 },
+        { "label": "Lote", "value": null }
+      ],
+      "value": 453.98,
+      "pendencies": 2,
+      "billTypes": ["R"],
+      "showAttachment": true,
+      "showDocument": true,
+      "hasPendingDocument": true
+    },
+    {
+      "id": 9,
+      "activityId": 1,
+      "patientName": "Salazar Frances",
+      "days": 2,
+      "status": "GOOD",
+      "healthInsurance": "Convênio 2",
+      "billSources": [
+        { "label": "Conta", "value": 792905 },
+        { "label": "Atend.", "value": "AT893891" },
+        { "label": "Remessa", "value": 893690 },
+        { "label": "Lote", "value": 893660 }
+      ],
+      "value": 693.98,
+      "pendencies": 8,
+      "billTypes": ["R"],
+      "showAttachment": true,
+      "showDocument": true,
+      "hasPendingDocument": false
+    },
+    {
+      "id": 10,
+      "activityId": 1,
+      "patientName": "Cristiano Rizza Neto",
+      "days": 33,
+      "status": "DELAYED",
+      "healthInsurance": "Saude Golden",
+      "billSources": [
+        { "label": "Conta", "value": 156682 },
+        { "label": "Atend.", "value": "AT265410" },
+        { "label": "Remessa", "value": 33281 },
+        { "label": "Lote", "value": null }
+      ],
+      "value": 287.50,
+      "pendencies": 0,
+      "billTypes": ["R"],
+      "showAttachment": true,
+      "showDocument": true,
+      "hasPendingDocument": true
+    },
+    {
+      "id": 11,
+      "activityId": 1,
+      "patientName": "Jessica Felix Lazzarini",
+      "days": 3,
+      "status": "GOOD",
+      "healthInsurance": "Unicorp Blue",
+      "billSources": [
+        { "label": "Conta", "value": 166911 },
+        { "label": "Atend.", "value": "AT275825" },
+        { "label": "Remessa", "value": 33803 },
+        { "label": "Lote", "value": null }
+      ],
+      "value": 251.43,
+      "pendencies": 2,
+      "billTypes": ["Q"],
+      "showAttachment": true,
+      "showDocument": true,
+      "hasPendingDocument": false
+    },
+    {
+      "id": 12,
+      "activityId": 2,
+      "patientName": "Salazar Frances",
+      "days": 2,
+      "status": "GOOD",
+      "healthInsurance": "Convênio 2",
+      "billSources": [
+        { "label": "Conta", "value": 792904 },
+        { "label": "Atend.", "value": "AT893892" },
+        { "label": "Remessa", "value": 893693 },
+        { "label": "Lote", "value": 893661 }
+      ],
+      "value": 13.08,
+      "pendencies": 4,
+      "billTypes": ["H"],
+      "showAttachment": false,
+      "showDocument": true,
+      "hasPendingDocument": false
+    }
+  ]
+}
