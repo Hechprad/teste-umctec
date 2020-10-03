@@ -30,7 +30,10 @@ Disponibilizar uma lista de pedidos e seus detalhes.
 ```
 
 - Rotas => http://localhost:3000
-  - "/"
-  - "/"
+  - "/activities"
+  - "/accounts" - Em Breve
+  - "/users" - Em Breve
+  - "/performance" - Em Breve
+  - "/dashboard" - Em Breve
 
 ---
