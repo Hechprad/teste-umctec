@@ -15,7 +15,7 @@
       "cardsCount": {
         "delayed": 1,
         "warning": 0,
-        "good": 0
+        "good": 2
       }
     },
     {
@@ -288,6 +288,26 @@
       "showAttachment": false,
       "showDocument": true,
       "hasPendingDocument": false
+    },
+    {
+      "id": 13,
+      "activityId": 2,
+      "patientName": "Cristiano Rizza Neto",
+      "days": 33,
+      "status": "DELAYED",
+      "healthInsurance": "Saude Golden",
+      "billSources": [
+        { "label": "Conta", "value": 156682 },
+        { "label": "Atend.", "value": "AT265410" },
+        { "label": "Remessa", "value": 33281 },
+        { "label": "Lote", "value": null }
+      ],
+      "value": 287.50,
+      "pendencies": 0,
+      "billTypes": ["R"],
+      "showAttachment": true,
+      "showDocument": true,
+      "hasPendingDocument": true
     }
   ]
 }
