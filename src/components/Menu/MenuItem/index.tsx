@@ -26,7 +26,7 @@ const MenuItem: React.FC<IMenuItem> = ({
     <s.Border selectedItem={selectedItem} />
     <s.Content>
       <IconExporter name={iconName} color={color} />
-      <s.Text>{text}</s.Text>
+      <s.Text color={color}>{text}</s.Text>
     </s.Content>
   </s.MenuItem>
 )
