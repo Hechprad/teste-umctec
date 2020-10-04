@@ -1,14 +1,16 @@
 import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.div`
+  background-color: ${({ theme }) => theme.colors.background};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-width: 300px;
+  min-width: 280px;
 `
 
 export const MenuItems = styled.div`
+  background-color: ${({ theme }) => theme.colors.background};
   position: absolute;
   display: flex;
   flex-direction: column;

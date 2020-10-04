@@ -7,14 +7,15 @@ import * as s from './styles'
 
 interface IDropdown {
   items: string[]
+  setSelected: (selected: number) => void
 }
 
-const Dropdown: React.FC<IDropdown> = ({ items }) => {
+const Dropdown: React.FC<IDropdown> = ({ items, setSelected, ...rest }) => {
   const [selectedItem, setSelectedItem] = useState<number>(1)
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <s.Wrapper>
+    <s.Wrapper {...rest}>
       <s.MenuItems>
         <s.Item
           isOpen={isOpen}
@@ -34,6 +35,7 @@ const Dropdown: React.FC<IDropdown> = ({ items }) => {
                     onClick={() => {
                       setIsOpen(false)
                       setSelectedItem(index + 1)
+                      setSelected(index + 1)
                     }}
                   >
                     <s.Title>{item}</s.Title>
