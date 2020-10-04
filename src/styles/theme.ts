@@ -16,7 +16,8 @@ export const themeColors = {
 }
 
 export const shadows = {
-  gray1: '0px 2px 4px rgba(39, 39, 39, 0.14)',
+  gray1: '0px 4px 4px rgba(39, 39, 39, 0.14)',
+  gray2: '0px 0px 6px rgba(39, 39, 39, 0.14)',
 }
 
 const genericFontType = {

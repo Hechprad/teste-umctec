@@ -9,6 +9,16 @@ export default createGlobalStyle`
     src: local('TitilliumWeb'),
     url(${TitilliumWeb}) format('truetype');
   }
+  html {
+    height: 100%;
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+  }
 
   * {
     margin: 0;
@@ -48,4 +58,20 @@ export default createGlobalStyle`
   ul {
     list-style-type: none;
   }
+/* ------------------------------- */
+
+
+  /* .main-content {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    justify-content: center;
+    flex-direction: column;
+    background-color: ${props => props.theme.colors.gray1};
+
+    @media screen and (max-width: 1280px) {
+      margin-top: 14px;
+    }
+  } */
 `

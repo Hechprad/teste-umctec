@@ -8,7 +8,7 @@ export interface ICard {
   activityId: number
   patientName: string
   days: number
-  status: string
+  status: 'DELAYED' | 'WARNING' | 'GOOD'
   healthInsurance: string
   billSources: IBillSources[]
   value: number
