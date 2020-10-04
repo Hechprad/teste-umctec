@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   align-content: center;
   width: 100px;
   height: 100vh;
-  z-index: 1;
+  z-index: 3;
   position: fixed;
   top: 0px;
 `
