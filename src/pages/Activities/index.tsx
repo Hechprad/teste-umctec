@@ -192,7 +192,7 @@ const Activities: React.FC = () => {
             <Card
               key={v4()}
               cardData={card}
-              checked={isAllChecked}
+              checked={isAllChecked && card.hasPendingDocument === false}
               handleCheckboxChange={handleCheckboxChange}
             />
           ))}
