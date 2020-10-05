@@ -14,15 +14,22 @@ const menuItems = (
   const activeColor = 'blue2'
   const inactiveColor = 'gray3'
 
-  const handleActiveItem = (path: string): 'blue2' | 'gray3' =>
-    locationPath === path ? activeColor : inactiveColor
+  const handleActiveItem = (path: string): 'blue2' | 'gray3' => {
+    if (locationPath.includes('/activity')) {
+      return path === '/activities' ? activeColor : inactiveColor
+    }
+
+    return locationPath === path ? activeColor : inactiveColor
+  }
+
   return [
     {
       id: 1,
       text: 'Minhas atividades',
       iconName: 'activities',
       color: handleActiveItem('/activities'),
-      selectedItem: locationPath === '/activities',
+      selectedItem:
+        locationPath === '/activities' || locationPath.includes('/activity'),
     },
     {
       id: 2,

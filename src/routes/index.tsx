@@ -8,6 +8,7 @@ const Routes: React.FC<RouteProps> = () => (
   <Switch>
     <Route path="/" exact render={() => <Redirect to="/activities" />} />
     <Route path="/activities" exact component={Activities} />
+    <Route path="/activity/:id" exact component={Activities} />
     <Route path="/accounts" exact component={NotFound} />
     <Route path="/users" exact component={NotFound} />
     <Route path="/performance" exact component={NotFound} />

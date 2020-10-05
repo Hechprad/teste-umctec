@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useHistory, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { v4 } from 'uuid'
 import Pagination from '@material-ui/lab/Pagination'
@@ -17,6 +18,9 @@ import CardBullet from './CardBullet'
 import * as s from './styles'
 
 const Activities: React.FC = () => {
+  const history = useHistory()
+  const { id } = useParams<{ id?: string }>()
+
   const [activity, setActivity] = useState<IActivity | null>(null)
   const [cards, setCards] = useState<ICard[]>([])
   const [dropDownData, setDropDownData] = useState<string[]>([])
@@ -38,6 +42,13 @@ const Activities: React.FC = () => {
 
   useGetActivities()
   useGetCards()
+
+  // Set unit based on path id
+  useEffect(() => {
+    if (id) {
+      setUnit(Number(id))
+    }
+  }, [id])
 
   // handle activity info
   useEffect(() => {
@@ -84,10 +95,11 @@ const Activities: React.FC = () => {
   // reset currentPage and AllChecked if unit change
   useEffect(() => {
     if (unit) {
+      history.push(`/activity/${unit}`)
       setCurrentPage(1)
       setIsAllChecked(false)
     }
-  }, [unit])
+  }, [history, unit])
 
   const handleSelectInput = (
     event: React.FormEvent<HTMLSelectElement>
@@ -115,7 +127,11 @@ const Activities: React.FC = () => {
       <s.MainContent>
         <s.Header>
           <s.DropDownWrapper>
-            <s.DropDown items={dropDownData} setSelected={setUnit} />
+            <s.DropDown
+              items={dropDownData}
+              selected={unit}
+              setSelected={setUnit}
+            />
             <s.SubTitle>Auditar conta</s.SubTitle>
           </s.DropDownWrapper>
           <s.CardsAmount>
