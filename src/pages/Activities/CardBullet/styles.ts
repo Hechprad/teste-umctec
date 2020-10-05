@@ -4,7 +4,6 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
 `
 
 export const Circle = styled.div<{ type: 'DELAYED' | 'WARNING' | 'GOOD' }>`
