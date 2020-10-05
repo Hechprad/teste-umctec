@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { v4 } from 'uuid'
 
 import { ICard } from 'store/modules/Cards/types'
@@ -10,9 +10,24 @@ import * as s from './styles'
 
 interface ICardComponent {
   cardData: ICard
+  checked: boolean
+  handleCheckboxChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const CardComponent: React.FC<ICardComponent> = ({ cardData, ...rest }) => {
+const CardComponent: React.FC<ICardComponent> = ({
+  cardData,
+  checked,
+  handleCheckboxChange,
+  ...rest
+}) => {
+  const [isChecked, setIsChecked] = useState(false)
+
+  useEffect(() => {
+    if (checked) {
+      setIsChecked(true)
+    }
+  }, [checked])
+
   const handleDocuments = (): React.ReactNode =>
     cardData.hasPendingDocument ? (
       <IconExporter
@@ -24,6 +39,11 @@ const CardComponent: React.FC<ICardComponent> = ({ cardData, ...rest }) => {
     ) : (
       <IconExporter name="document" color="gray4" width={25} height={25} />
     )
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    setIsChecked(event.target.checked)
+    handleCheckboxChange(event)
+  }
 
   return (
     <s.Wrapper {...rest}>
@@ -38,9 +58,14 @@ const CardComponent: React.FC<ICardComponent> = ({ cardData, ...rest }) => {
             <s.LabelText>{cardData.healthInsurance}</s.LabelText>
           </s.TitleContent>
         </s.StartItems>
-        {/* <s.EndItems>
-      <s.Checkbox />
-      </s.EndItems> */}
+        <s.InputWrapper>
+          <input
+            name={`${cardData.id}`}
+            type="checkbox"
+            checked={isChecked}
+            onChange={handleChange}
+          />
+        </s.InputWrapper>
       </s.Header>
       <s.LabelsWrapper>
         {cardData.billSources.map(item => (

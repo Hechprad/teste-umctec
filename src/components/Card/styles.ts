@@ -196,3 +196,11 @@ export const EndItems = styled.div`
     margin-left: ${({ theme }) => theme.spacing(1)}px;
   }
 `
+
+export const InputWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  margin-top: ${({ theme }) => theme.spacing(1)}px;
+`
