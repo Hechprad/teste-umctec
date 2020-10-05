@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useHistory, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { v4 } from 'uuid'
 import Pagination from '@material-ui/lab/Pagination'
@@ -18,7 +18,6 @@ import CardBullet from './CardBullet'
 import * as s from './styles'
 
 const Activities: React.FC = () => {
-  const history = useHistory()
   const { id } = useParams<{ id?: string }>()
 
   const [activity, setActivity] = useState<IActivity | null>(null)
@@ -100,7 +99,6 @@ const Activities: React.FC = () => {
   // reset currentPage and AllChecked if unit change and reset currentPage if selectValue change
   useEffect(() => {
     if (unit) {
-      history.push(`/activity/${unit}`)
       setCurrentPage(1)
       setIsAllChecked(false)
     }
@@ -108,7 +106,7 @@ const Activities: React.FC = () => {
     if (selectValue) {
       setCurrentPage(1)
     }
-  }, [history, selectValue, unit])
+  }, [selectValue, unit])
 
   const handleSelectInput = (
     event: React.FormEvent<HTMLSelectElement>

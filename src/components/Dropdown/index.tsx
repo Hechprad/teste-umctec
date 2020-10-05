@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { v4 } from 'uuid'
 
 import IconExporter from 'components/IconExporter'
+import { useHistory } from 'react-router-dom'
 
 import * as s from './styles'
 
@@ -17,6 +18,8 @@ const Dropdown: React.FC<IDropdown> = ({
   setSelected,
   ...rest
 }) => {
+  const history = useHistory()
+
   const [selectedItem, setSelectedItem] = useState<number>(1)
   const [isOpen, setIsOpen] = useState(false)
 
@@ -46,6 +49,7 @@ const Dropdown: React.FC<IDropdown> = ({
                       setIsOpen(false)
                       setSelectedItem(index + 1)
                       setSelected(index + 1)
+                      history.push(`/activity/${index + 1}`)
                     }}
                   >
                     <s.Title>{item}</s.Title>
