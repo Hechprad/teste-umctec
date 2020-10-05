@@ -65,14 +65,22 @@ const Activities: React.FC = () => {
 
   // handle cards info
   useEffect(() => {
-    if (cardsData.data) {
+    if (cardsData.data && selectValue === 'Prioridade(SLA)') {
       setCards(
         cardsData.data
           .filter(card => card.activityId === unit)
           .sort((a, b) => b.days - a.days)
       )
     }
-  }, [cardsData.data, unit])
+    if (cardsData.data && selectValue === 'Receber documentos') {
+      setCards(
+        cardsData.data
+          .filter(card => card.activityId === unit)
+          .sort((a, b) => b.days - a.days)
+          .filter(card => card.hasPendingDocument === true)
+      )
+    }
+  }, [cardsData.data, selectValue, unit])
 
   // handle pagination
   useEffect(() => {
@@ -81,25 +89,26 @@ const Activities: React.FC = () => {
       setTotalPage(Math.ceil(totalItems / itemsPerPage))
 
       const totalBackwardPages = currentPage - 1
-      const totalOrdersToBeRemoved = itemsPerPage * totalBackwardPages
+      const totalCardsToBeRemoved = itemsPerPage * totalBackwardPages
 
       setPageContent(
-        cards.slice(
-          totalOrdersToBeRemoved,
-          totalOrdersToBeRemoved + itemsPerPage
-        )
+        cards.slice(totalCardsToBeRemoved, totalCardsToBeRemoved + itemsPerPage)
       )
     }
   }, [cards, currentPage, totalItems])
 
-  // reset currentPage and AllChecked if unit change
+  // reset currentPage and AllChecked if unit change and reset currentPage if selectValue change
   useEffect(() => {
     if (unit) {
       history.push(`/activity/${unit}`)
       setCurrentPage(1)
       setIsAllChecked(false)
     }
-  }, [history, unit])
+
+    if (selectValue) {
+      setCurrentPage(1)
+    }
+  }, [history, selectValue, unit])
 
   const handleSelectInput = (
     event: React.FormEvent<HTMLSelectElement>
