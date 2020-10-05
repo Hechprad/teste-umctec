@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { themeColors } from 'styles/theme'
 
 export const MenuItem = styled.div`
   display: flex;
@@ -43,8 +44,12 @@ export const Content = styled.div`
   }
 `
 
-export const Text = styled.p`
+interface IText {
+  color: keyof typeof themeColors
+}
+
+export const Text = styled.p<IText>`
  ${({ theme }) => theme.fontTypes.caption}
-  color: ${({ theme }) => theme.colors.gray3};
+  color: ${({ theme, color }) => theme.colors[color]};
   width: 90px;
 `

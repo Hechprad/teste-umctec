@@ -37,7 +37,7 @@ const Menu: React.FC = () => {
 
   return (
     <s.Wrapper>
-      <s.MenuLogo>
+      <s.MenuLogo onClick={() => handleClick(0)}>
         <IconExporter name="brand" color="white1" width={100} height="100%" />
       </s.MenuLogo>
       {menuItems(locationPath).map(item => (

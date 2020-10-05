@@ -21,5 +21,6 @@ export const Section = styled.section`
 export const PageTitle = styled.h3`
   ${({ theme }) => theme.fontTypes.heading}
   color: ${({ theme }) => theme.colors.gray4};
-  margin: ${({ theme }) => `${theme.spacing(2)}px 0 ${theme.spacing(5)}px`};
+  margin: ${({ theme }) =>
+    `${theme.spacing(2)}px 0 ${theme.spacing(5)}px 100px`};
 `
